@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import PlayButton from "./playbuttons";
-
+import '../css/Home.css'
 
 function Home() {
   const [score, setScore] = useState({balls : 0, runs : 0});
@@ -24,13 +24,6 @@ function Home() {
   const updateMove = ({ playerMove, computerMove }) => {
     setMoves({playerMove : playerMove, computerMove : computerMove});
   }
-
-  // useEffect(() => {
-  //   console.log(score.balls, score.runs);    
-  //   console.log(moves.playerMove, moves.computerMove);    
-
-  // }, [score, moves]);
-
 
   return (
     <>

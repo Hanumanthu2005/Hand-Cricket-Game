@@ -1,4 +1,4 @@
-
+import '../css/playbuttons.css'
 
 function PlayButton({ run, updateScore, updateMove }) {
 

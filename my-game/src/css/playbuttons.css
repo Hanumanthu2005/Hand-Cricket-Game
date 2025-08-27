@@ -1,0 +1,30 @@
+/* Cricket-style play button */
+.play-btn {
+  background: #ff5722; /* Cricket ball orange-red */
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover effect → ball bounce */
+.play-btn:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  background: #e64a19; /* Darker cricket ball shade */
+}
+
+/* Subtle "pressed" effect */
+.play-btn:active {
+  transform: scale(0.92);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
