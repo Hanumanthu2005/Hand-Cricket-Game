@@ -52,6 +52,7 @@ function Home() {
       </div>
       <div className="score-card">
         <p className="score">Score : {score.runs}({score.balls})</p>
+        <p className="strick-rate">SR : {((score.runs / score.balls) * 100).toFixed(2)}</p>
       </div>
     </>
   )
