@@ -3,9 +3,18 @@ import PlayButton from "./playbuttons";
 import '../css/Home.css'
 
 function Home() {
-  const [score, setScore] = useState({balls : 0, runs : 0});
+  const [score, setScore] = useState(() => {
+    // Load score from localStorage or use default
+    const savedScore = localStorage.getItem('handCricketScore');
+    return savedScore ? JSON.parse(savedScore) : { balls: 0, runs: 0 };
+  });
   const [moves, setMoves] = useState({playerMove : 0, computerMove : 0})
   const [isOut, setIsOut] = useState(false);
+
+  // Save score to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('handCricketScore', JSON.stringify(score));
+  }, [score]);
 
   const updateScore = (scoredRuns) => {
     if(scoredRuns === -1) {
@@ -34,7 +43,7 @@ function Home() {
         <>
           <div className="out-message">
             <h2>🏏 You are OUT!</h2>
-            <p>Final Score: {score.runs} ({score.balls} balls)</p>
+            <p>Final Score: {score.runs} ({score.balls} balls) SR : {((score.runs / score.balls) * 100 || 0).toFixed(2)}</p>
             <button onClick={() => {
               setScore({ balls: 0, runs: 0 });
               setMoves({ playerMove: 0, computerMove: 0 });
@@ -61,7 +70,7 @@ function Home() {
           </div>
           <div className="score-card">
             <p className="score">Score : {score.runs}({score.balls})</p>
-            <p className="strick-rate">SR : {((score.runs / score.balls) * 100).toFixed(2)}</p>
+            <p className="strick-rate">SR : {((score.runs / score.balls) * 100 || 0).toFixed(2)}</p>
           </div>
         </>
       )}
