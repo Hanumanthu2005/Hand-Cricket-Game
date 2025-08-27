@@ -2,6 +2,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: rgb(32, 32, 32);
   /* Add your background image URL here */
   background-image: url('images/background.png');
   background-size: cover;
