@@ -43,7 +43,7 @@ function Home() {
         <>
           <div className="out-message">
             <h2>🏏 You are OUT!</h2>
-            <p>Final Score: {score.runs} ({score.balls} balls) SR : {((score.runs / score.balls) * 100 || 0).toFixed(2)}</p>
+            <p>Final Score: {score.runs} ({score.balls}) SR : {((score.runs / score.balls) * 100 || 0).toFixed(2)}</p>
             <button onClick={() => {
               setScore({ balls: 0, runs: 0 });
               setMoves({ playerMove: 0, computerMove: 0 });
